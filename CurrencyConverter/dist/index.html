@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Currency converter</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/e5f8165c38.js" crossorigin="anonymous"></script>
+    <link href="style/app.css" rel="stylesheet"></head>
+    <body>
+        <div id="wrapper" class="wrapper">
+            <div class="menuBar">
+                <div class="menuItem select">Currency Converter</div>
+                <div class="menuItem">Charts Maker</div>
+                <div class="menuItem">About</div>
+                <div class="underline"></div>
+            </div>
+
+            <div class="content">
+                <div class="box">
+                    <form class="form">
+                        <label for="amountFrom" class="inputLabel">Amount</label>
+                        <input
+                            type="number"
+                            id="amountFrom"
+                            class="formInput"
+                            placeholder="Enter amount to convert"
+                            name=""
+                            autocomplete="off"
+                            required
+                        >
+                        <label for="currFrom" class="inputLabel">From</label>
+                        <input
+                            type="text"
+                            id="currFrom"
+                            class="formInput currencyInput"
+                            placeholder="From (start typing)"
+                            autocomplete="off"
+                            name=""
+                            required
+                        >
+                        <div class="suggestionsContainer">
+                            <ul class="suggestions"></ul>
+                        </div>
+                        <div class="arrows button">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <label for="currTo" class="inputLabel">To</label>
+                        <input
+                            type="text"
+                            id="currTo"
+                            class="formInput currencyInput"
+                            placeholder="To (start typing)"
+                            autocomplete="off"
+                            name=""
+                            required
+                        >
+                        <div class="suggestionsContainer">
+                            <ul class="suggestions"></ul>
+                        </div>
+                        <label for="amountTo" class="inputLabel">Amount</label>
+                        <input
+                            type="number"
+                            id="amountTo"
+                            class="formInput"
+                            placeholder=""
+                            autocomplete="off" 
+                            name=""
+                            required
+                        >
+                    </form>
+                </div>
+                <div class="box" id="top10">
+                    Loading data...
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="box">
+                    <form class="form">
+                        <label for="currency" class="inputLabel">Currency</label>
+                        <input
+                            type="text"
+                            id="currency"
+                            class="formInput currencyInput currencyFrom"
+                            placeholder="Currency (start typing)"
+                            autocomplete="off"
+                            name=""
+                            required
+                        />
+                        <div class="suggestionsContainer">
+                            <ul class="suggestions"></ul>
+                        </div>
+                        <i class="fas fa-sync"></i>
+                        <label for="currency" class="inputLabel">Currency</label>
+                        <input
+                            type="text"
+                            id="currency"
+                            class="formInput currencyInput currencyTo"
+                            placeholder="Currency (start typing)"
+                            autocomplete="off"
+                            name=""
+                            required
+                        >
+                        <div class="suggestionsContainer">
+                            <ul class="suggestions"></ul>
+                        </div>
+                        <i class="fas fa-sync" style="visibility: hidden"></i>
+                        <label for="dateFrom" class="inputLabel">Start date</label>
+                        <input type="date" id="dateFrom" class="formInput" name="" required >
+                        <i class="fas fa-sync" style="visibility: hidden"></i>
+                        <label for="dateTo" class="inputLabel">End date</label>
+                        <input type="date" id="dateTo" class="formInput" name="" required >
+                        <div class="chartIcon button">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </form>
+                </div>
+                <div class="box">
+                    <img id="legend" src="./img/legend.png" alt="Chart legend"/>
+                    <canvas id="chart" class="chart" style="display: none"></canvas>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="box">
+                    <img class="pic" src="https://coderscamp.edu.pl/assets/img/about.png" />
+                </div>
+                <div class="box">
+                    Projekt został wykonany w ramach kursu programowania webowego CodersCamp. Celem było sprawdzenie wiedzy oraz zastosowanie języka JavaScript i jego funkcjonalności związanych z API, asynchronicznością oraz DOM.
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script type="text/javascript" src="js/polyfills.bundle.js"></script><script type="text/javascript" src="js/app.bundle.js"></script></body>
+</html>
