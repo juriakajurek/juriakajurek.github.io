@@ -1,0 +1,323 @@
+@import "./test";
+
+$mobile-width: 650px;
+$mid-width: 1333px;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    --main-color: #11172d; // rgb(18, 20, 165);//granat // rgb(74, 18, 165);//fiolet
+    --acc-color: #374c62; // rgb(63, 61, 168) //rgb(102, 61, 168);
+    --text-color: rgba(217, 218, 230, 0.95); //rgb(204, 200, 253); //rgb(221, 200, 253);
+
+    background: linear-gradient(120deg, var(--main-color), var(--acc-color), var(--text-color));
+    background-image: url("https://kantoronline.pl/blog/wp-content/uploads/2017/10/bitcoin_12.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "Poppins", sans-serif;
+
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menuBar {
+    position: fixed;
+    top: 2%;
+    left: 0;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: 10vh;
+
+    @media (max-width: $mobile-width) {
+        position: relative;
+        height: fit-content;
+    }
+}
+
+.menuItem {
+    height: 70%;
+    width: 30%;
+    min-width: 200px;
+    box-shadow: 0px 0px 0.2rem var(--main-color);
+    border: 0.5px solid var(--text-color);
+    opacity: 0.8;
+    border-radius: 2%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.2rem;
+    color: var(--text-color);
+    box-shadow: 0px 0px 0.5rem var(--text-color);
+    background: rgba(0, 0, 0, 0.25);
+
+    @media (max-width: $mobile-width) {
+        width: 100%;
+    }
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0px 0px 2rem var(--text-color);
+    }
+}
+
+.select {
+    color: var(--acc-color);
+    background: var(--text-color);
+}
+
+.underline {
+    position: fixed;
+    top: 12vh;
+    left: 5%; //37.5%; //70%;
+    width: 25%;
+    border: white solid 0.5px;
+
+    @media (max-width: $mobile-width) {
+        display: none;
+    }
+}
+
+.content {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
+    @media (max-width: $mobile-width) {
+        height: fit-content;
+    }
+}
+
+.box {
+    min-height: 65%;
+    // max-height: 75vh;
+    width: 30%;
+    margin: 5% 5%;
+    padding: 3%;
+
+    background: var(--text-color);
+    border-radius: 2%;
+    box-shadow: 10px 10px 0.5rem var(--acc-color);
+    border: 0.5px solid var(--text-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    text-align: center;
+    color: var(--acc-color);
+    font-size: 1.2rem;
+
+    @media (min-width: $mobile-width) and (max-width: $mid-width) {
+        width: 60%;
+    }
+
+    @media (max-width: $mobile-width) {
+        width: 100%;
+    }
+
+    &__header {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin: 3%;
+    }
+}
+
+.form {
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    & .inputLabel {
+        max-width: 350px;
+        width: 100%;
+        align-self: center;
+
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    & .formInput {
+        max-width: 350px;
+        width: 100%;
+        padding: 10px;
+
+        font-size: 1.2rem;
+        font-weight: bold;
+
+        border-radius: 10px;
+        text-align: center;
+        border: none;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0px 0px 0.2rem var(--acc-color);
+
+        &::placeholder {
+            color: var(--acc-color);
+            font-size: 0.9rem;
+            opacity: 0.5;
+            object-fit: contain;
+        }
+
+        &[type="date"] {
+            font-weight: 400;
+        }
+    }
+}
+
+.suggestionsContainer{
+    max-height: 0;
+    overflow: visible;
+}
+
+.suggestions{
+    display: block;
+    z-index: 100;
+    overflow: initial;
+    list-style-type: none;
+    margin: 0;
+}
+
+.suggestions li{
+    position: sticky;
+    height: 1.5rem;
+    z-index: 100;
+    font-size: 1rem;
+    margin-bottom: .2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0px 0px .2rem var(--acc-color);  
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.suggestions li:hover{
+    background-color: rgba(0,0,0,.55);
+    color: rgb(255,255,255);
+    border: 1px solid black;
+}
+
+.button{
+    background-color: rgba(255,255,255,.55);
+    border: solid .5px var(--acc-color);
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    border-radius: 50%;
+    box-shadow: 0px 0px .2rem var(--acc-color);  
+    cursor: pointer;
+}
+
+.arrows {
+    transform: rotate(90deg);
+    font-size: 1rem;
+    margin: 4% 0 0 0;
+
+    &:hover {
+        box-shadow: 0px 0px 0.5rem var(--acc-color);
+        animation-name: rotation;
+        animation-duration: 0.2s;
+        animation-timing-function: linear;
+        animation-play-state: running;
+        animation-fill-mode: forwards;
+    }
+}
+
+.topTenTable {
+    width: 100%;
+    height: 90%;
+    font-size: 0.7rem;
+
+    & tr {
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
+
+.fa-sync {
+    margin: 15px 10px 0 0;
+    transform: rotate(90deg);
+    cursor: pointer;
+
+    &:hover {
+        animation-name: rotation;
+        animation-duration: 0.2s;
+        animation-timing-function: linear;
+        animation-play-state: running;
+        animation-fill-mode: forwards;
+    }
+}
+
+.chartIcon {
+    font-size: 1rem;
+    color: var(--acc-color);
+    margin: 4% auto 0 auto;
+
+    border: solid 0.5px var(--acc-color);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0.2rem var(--acc-color);
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0px 0px 0.5rem var(--acc-color);
+    }
+}
+
+@keyframes rotation {
+    0% {
+    }
+    100% {
+        transform: rotate(270deg);
+    }
+}
+
+.chart {
+    width: 100%;
+    height: 100%;
+    border-radius: 2%;
+}
+
+.pic {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    overflow: hidden;
+}
