@@ -1,6 +1,9 @@
 # Currency Conventer
 Project developed during 5th edition of CodersCamp
 
+## Demo:
+https://juriakajurek.github.io/CurrencyConverter/dist/
+
 ## Features:
 
 -   displays top 10 crypto by marketcap and 24h price change
